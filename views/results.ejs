@@ -1,0 +1,16 @@
+<html lang="en">
+    <%- include('./partials/nav.ejs') %>
+    <body>
+        <div>
+            <form action="/search" method="POST">
+                <b> Returned Procedures: </b></br> 
+                <% if (returnedProcedures.length > 0) { %>
+                    <% returnedProcedures.forEach(procedure => { %>
+                        <b><%= procedure.name %> <%= procedure.billing_number %></b><br>
+                    <% }); %>
+                <% } %>
+                <button><a href="/searchbar">Return to Search menu</a></button>
+            </form>
+        </div>
+    </body>
+</html>
